@@ -99,7 +99,7 @@ async def on_pm_s(client: Client, message: Message):
 
 
 @app.on_callback_query(filters.regex("gib_sources"))
-async def gib_repo_callback(_, callback_query):
+async def gibs_repo_callback(_, callback_query):
     await callback_query.edit_message_media(
         media=InputMediaVideo("https://graph.org/file/52b2315b843584a3c4532.mp4"),
         reply_markup=InlineKeyboardMarkup(
