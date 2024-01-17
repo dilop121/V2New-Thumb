@@ -14,7 +14,10 @@ def start_command(client, message):
 
 @app.on_callback_query(filters.regex("my_source"))
 async def my_repo_callback(_, callback_query):
-    await callback_query.edit_message_media(
-        media=InputMediaVideo("https://graph.org/file/52b2315b843584a3c4532.mp4", has_spoiler=True),
-        reply_markup=InlineKeyboardMarkup([[close_button]]),
-    )
+    try:
+        await callback_query.edit_message_media(
+            media=InputMediaVideo("https://graph.org/file/52b2315b843584a3c4532.mp4"),
+            reply_markup=InlineKeyboardMarkup([[close_button]]),
+        )
+    except Exception as e:
+        print(f"Error editing message media: {e}")
