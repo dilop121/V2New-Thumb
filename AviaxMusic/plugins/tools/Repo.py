@@ -10,7 +10,7 @@ def repo_command(client, message):
     keyboard = InlineKeyboardMarkup([
         [repo_button, close_button]
     ])
-    message.reply_text("ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ᴍᴀᴅᴀʀᴊᴀᴀᴛ ᴛᴏ sᴇᴇ ᴛʜᴇ ʀᴇᴘᴏ!", reply_markup=keyboard)
+    message.reply_text("ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ᴍᴀᴅᴀʀᴊᴀᴀᴛ!", reply_markup=keyboard)
 
 @app.on_callback_query(filters.regex("my_source"))
 async def my_repo_callback(_, callback_query: CallbackQuery):
