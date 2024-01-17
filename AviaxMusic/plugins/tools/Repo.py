@@ -14,8 +14,9 @@ def repo_command(client, message):
 
 @app.on_callback_query(filters.regex("my_source"))
 async def my_repo_callback(_, callback_query: CallbackQuery):
-    await callback_query.edit_message_media(
-        media=InputMediaVideo("https://telegra.ph/file/3ae24ed057b2bcc03ca55.mp4"),
+    await callback_query.edit_message_reply_markup(
         reply_markup=InlineKeyboardMarkup([[close_button]]),
     )
-
+    await callback_query.edit_message_media(
+        media=InputMediaVideo("https://telegra.ph/file/3ae24ed057b2bcc03ca55.mp4")
+    )
