@@ -1,7 +1,6 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from AviaxMusic import app
-from config import BOT_USERNAME
 from config import OWNER_ID
 import config
 import random 
