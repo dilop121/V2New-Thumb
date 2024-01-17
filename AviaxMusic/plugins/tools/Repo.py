@@ -21,3 +21,4 @@ async def my_repo_callback(_, callback_query):
         )
     except Exception as e:
         print(f"Error editing message media: {e}")
+
