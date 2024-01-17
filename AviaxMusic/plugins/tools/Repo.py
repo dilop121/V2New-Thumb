@@ -1,4 +1,5 @@
 from pyrogram import Client, filters
+from pyrogram.types import InputMediaVideo
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from AviaxMusic import app
 
