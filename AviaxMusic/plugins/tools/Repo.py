@@ -1,25 +1,35 @@
 from pyrogram import Client, filters
-from pyrogram.types import InputMediaVideo
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, InputMediaVideo
 from AviaxMusic import app
 
-@app.on_message(filters.command("repo"))
-def start_command(client, message):
-    keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton("ʀᴇᴘᴏ❥", callback_data='gibs_source')]
-    ])
-
-    message.reply_text("ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ᴍᴀᴅᴀʀᴊᴀᴀᴛ ᴛᴏ sᴇᴇ ᴛʜᴇ ʀᴇᴘᴏ!", reply_markup=keyboard)
-
-@app.on_callback_query(filters.regex("gibs_source"))
-async def gibs_repo_callback(_, callback_query):
-    await callback_query.edit_message_media(
-        media=InputMediaVideo("https://graph.org/file/52b2315b843584a3c4532.mp4"),
+@app.on_message(filters.command("repo") & filters.group)
+async def help_group(client: Client, message: Message):
+    video_url = "https://telegra.ph/file/3ae24ed057b2bcc03ca55.mp4"
+    await message.reply_video(
+        video=video_url,
+        caption=f"""🍁𝐂𝐋𝐈𝐂𝐊🥰𝐁𝐄𝐋𝐎𝐖💝𝐁𝐔𝐓𝐓𝐎𝐍✨𝐓𝐎🙊𝐆𝐄𝐓🌱𝐑𝐄𝐏𝐎🍁""",
         reply_markup=InlineKeyboardMarkup(
             [
-                [close_button]
+                [
+                    InlineKeyboardButton(
+                        "🌱ƨσʋяcɛ🌱", url=video_url)
+                ]
             ]
         ),
     )
 
-close_button = InlineKeyboardButton("• ᴄʟᴏsᴇ •", callback_data="close")
+@app.on_message(filters.command("repo") & filters.private)
+async def help_private(client: Client, message: Message):
+    video_url = "https://telegra.ph/file/3ae24ed057b2bcc03ca55.mp4"
+    await message.reply_video(
+        video=video_url,
+        caption=f"""🍁𝐂𝐋𝐈𝐂𝐊🥰𝐁𝐄𝐋𝐎𝐖💝𝐁𝐔𝐓𝐓𝐎𝐍✨𝐓𝐎🙊𝐆𝐄𝐓🌱𝐑𝐄𝐏𝐎🍁""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "🌱ƨσʋяcɛ🌱", url=video_url)
+                ]
+            ]
+        ),
+    )
