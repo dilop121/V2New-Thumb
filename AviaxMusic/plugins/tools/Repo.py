@@ -6,13 +6,13 @@ from AviaxMusic import app
 @app.on_message(filters.command("repo"))
 def start_command(client, message):
     keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton("ʀᴇᴘᴏ❥", callback_data='gib_source')]
+        [InlineKeyboardButton("ʀᴇᴘᴏ❥", callback_data='gibs_source')]
     ])
 
     message.reply_text("ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ᴍᴀᴅᴀʀᴊᴀᴀᴛ ᴛᴏ sᴇᴇ ᴛʜᴇ ʀᴇᴘᴏ!", reply_markup=keyboard)
 
-@app.on_callback_query(filters.regex("gib_source"))
-async def gib_repo_callback(_, callback_query):
+@app.on_callback_query(filters.regex("gibs_source"))
+async def gibs_repo_callback(_, callback_query):
     await callback_query.edit_message_media(
         media=InputMediaVideo("https://graph.org/file/52b2315b843584a3c4532.mp4"),
         reply_markup=InlineKeyboardMarkup(
