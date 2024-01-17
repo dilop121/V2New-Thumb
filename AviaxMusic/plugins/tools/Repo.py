@@ -4,7 +4,6 @@ from pyrogram import Client, filters
 from pyrogram.types import InputMediaVideo, InlineKeyboardMarkup, InlineKeyboardButton
 
 
-
 close_button = InlineKeyboardButton("• ᴄʟᴏsᴇ •", callback_data="close")
 
 @app.on_message(filters.command("repo"))
@@ -13,7 +12,7 @@ def start_command(client, message):
         [InlineKeyboardButton("ʀᴇᴘᴏ❥", callback_data='repo_calls')]
     ])
 
-    message.reply_markup=keyboard)
+    message.reply_markup = keyboard
 
 @app.on_callback_query(filters.regex("repo_calls"))
 async def gib_repo_callback(_, callback_query):
@@ -23,5 +22,3 @@ async def gib_repo_callback(_, callback_query):
         media=InputMediaVideo(media_url),
         reply_markup=InlineKeyboardMarkup([[close_button]])
     )
-
-
