@@ -34,7 +34,7 @@ async def start(_, msg):
         ],
         [
           InlineKeyboardButton("ʜᴇʟᴘ", callback_data="githelp"),
-          InlineKeyboardButton("ʀᴇᴘᴏ", callback_data="gib_source")
+          InlineKeyboardButton("ʀᴇᴘᴏ", callback_data="gib_sources")
         ]]
     
     reply_markup = InlineKeyboardMarkup(buttons)
@@ -98,7 +98,7 @@ async def on_pm_s(client: Client, message: Message):
 
 
 
-@app.on_callback_query(filters.regex("gib_source"))
+@app.on_callback_query(filters.regex("gib_sources"))
 async def gib_repo_callback(_, callback_query):
     await callback_query.edit_message_media(
         media=InputMediaVideo("https://telegra.ph/file/3ae24ed057b2bcc03ca55.mp4"),
