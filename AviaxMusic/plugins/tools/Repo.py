@@ -12,10 +12,6 @@ def start_command(client, message):
     ])
     message.reply_text("ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ᴍᴀᴅᴀʀᴊᴀᴀᴛ ᴛᴏ sᴇᴇ ᴛʜᴇ ʀᴇᴘᴏ!", reply_markup=keyboard)
 
-@app.on_message(filters.text & ~filters.command)
-def echo_message(client, message):
-    message.reply_text(message.text)
-
 @app.on_callback_query(filters.regex("my_source"))
 async def my_repo_callback(_, callback_query):
     await callback_query.edit_message_media(
