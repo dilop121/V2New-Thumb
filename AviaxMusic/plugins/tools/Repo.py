@@ -1,6 +1,6 @@
 from AviaxMusic import app
-from pyrogram import Client, filters
-from pyrogram.types import InputMediaVideo, InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram import filters
+from pyrogram.types import InputMediaVideo, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 
 repo_button = InlineKeyboardButton("• ʀᴇᴘᴏ •", callback_data="my_source")
 close_button = InlineKeyboardButton("• ᴄʟᴏsᴇ •", callback_data="close")
@@ -13,8 +13,9 @@ def start_command(client, message):
     message.reply_text("ᴄʟɪᴄᴋ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ᴍᴀᴅᴀʀᴊᴀᴀᴛ ᴛᴏ sᴇᴇ ᴛʜᴇ ʀᴇᴘᴏ!", reply_markup=keyboard)
 
 @app.on_callback_query(filters.regex("my_source"))
-async def my_repo_callback(_, callback_query):
+async def my_repo_callback(_, callback_query: CallbackQuery):
     try:
+        await callback_query.answer()  # Respond to the button press
         await callback_query.edit_message_media(
             media=InputMediaVideo("https://graph.org/file/52b2315b843584a3c4532.mp4"),
             reply_markup=InlineKeyboardMarkup([[close_button]]),
