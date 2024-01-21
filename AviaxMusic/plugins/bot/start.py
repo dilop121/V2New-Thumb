@@ -22,7 +22,7 @@ from AviaxMusic.utils.decorators.language import LanguageStart
 from AviaxMusic.utils.formatters import get_readable_time
 from AviaxMusic.utils.inline import help_pannel, private_panel, start_panel
 from config import BANNED_USERS
-from config import MUSIC_BOT_NAME
+#from config import MUSIC_BOT_NAME
 from strings import get_string
 
 
@@ -49,7 +49,7 @@ async def start_pm(client, message: Message, _):
                 )
             return
         if name == "verify":
-            await message.reply_text(f"ʜᴇʏ {message.from_user.first_name},\nᴛʜᴀɴᴋs ғᴏʀ ᴠᴇʀɪғʏɪɴɢ ʏᴏᴜʀsᴇʟғ ɪɴ {config.MUSIC_BOT_NAME}, ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ɢᴏ ʙᴀᴄᴋ ᴀɴᴅ sᴛᴀʀᴛ ᴜsɪɴɢ ᴍᴇ.")
+            await message.reply_text(f"ʜᴇʏ {message.from_user.first_name},\nᴛʜᴀɴᴋs ғᴏʀ ᴠᴇʀɪғʏɪɴɢ ʏᴏᴜʀsᴇʟғ ɪɴ Hjkk, ɴᴏᴡ ʏᴏᴜ ᴄᴀɴ ɢᴏ ʙᴀᴄᴋ ᴀɴᴅ sᴛᴀʀᴛ ᴜsɪɴɢ ᴍᴇ.")
             if await is_on_off(config.LOG):
                 sender_id = message.from_user.id
                 sender_name = message.from_user.first_name
