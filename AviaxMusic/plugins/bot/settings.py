@@ -105,6 +105,29 @@ async def gib_repo_callback(_, callback_query):
 
 close_button = InlineKeyboardButton("• ᴄʟᴏsᴇ •", callback_data="close")
 
+start_txt = """Testing"""
+
+gd_buttons = [              
+        [
+            InlineKeyboardButton("Rᴇᴘᴏ", callback_data="gib_source")
+            InlineKeyboardButton("Lᴀɴɢᴜᴀɢᴇ", callback_data="LG"),    
+        ],
+        [
+            InlineKeyboardButton("ʙᴀᴄᴋ", callback_data=f"settingsback_helper"),    
+        ]
+        ]
+
+
+# ------------------------------------------------------------------------------- #
+
+
+@app.on_callback_query(filters.regex("dil_back"))
+async def dil_back(_, query: CallbackQuery):
+    await query.message.edit_caption(start_txt,
+                                    reply_markup=InlineKeyboardMarkup(gd_buttons),)
+        
+
+# -------------------------------------------------------------------------------------
 
 
 @app.on_callback_query(
