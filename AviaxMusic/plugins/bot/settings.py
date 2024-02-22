@@ -109,7 +109,7 @@ start_txt = """Testing"""
 
 gd_buttons = [              
         [
-            InlineKeyboardButton("Rᴇᴘᴏ", callback_data="gib_source")
+            InlineKeyboardButton("Rᴇᴘᴏ", callback_data="gib_source"),
             InlineKeyboardButton("Lᴀɴɢᴜᴀɢᴇ", callback_data="LG"),    
         ],
         [
